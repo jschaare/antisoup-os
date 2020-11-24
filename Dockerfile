@@ -34,4 +34,4 @@ ENV TEMPLATECONF=$BUILD_SRC_DIR/meta-antisoup/conf/template
 CMD $BUILD_SRC_DIR/$BUILD_TOOLS_SCR -y -d $BUILD_SRC_DIR/poky/3.1.3/ &&\
     source $BUILD_SRC_DIR/poky/3.1.3/environment-setup-$(uname -m)-pokysdk-linux &&\
     source $BUILD_SRC_DIR/poky/oe-init-build-env &&\
-    build && bitbake core-image-minimal
+    build && bitbake antisoup-image-dev
