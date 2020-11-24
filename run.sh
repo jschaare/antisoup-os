@@ -23,6 +23,8 @@ else
     exit 1
 fi
 
+mkdir -p $PWD/output
+
 echo "Downloading build tools..."
 
 pushd sources > /dev/null
