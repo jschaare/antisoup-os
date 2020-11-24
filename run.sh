@@ -27,6 +27,7 @@ echo "Downloading build tools..."
 
 pushd sources > /dev/null
 wget -nc https://downloads.yoctoproject.org/releases/yocto/yocto-3.1.3/buildtools/${BUILD_TOOLS}
+chmod 755 ${BUILD_TOOLS}
 popd > /dev/null
 
 echo "Building Docker image..."
