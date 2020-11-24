@@ -26,7 +26,7 @@ fi
 echo "Downloading build tools..."
 
 pushd sources > /dev/null
-wget https://downloads.yoctoproject.org/releases/yocto/yocto-3.1.3/buildtools/${BUILD_TOOLS}
+wget -nc https://downloads.yoctoproject.org/releases/yocto/yocto-3.1.3/buildtools/${BUILD_TOOLS}
 popd > /dev/null
 
 echo "Building Docker image..."
@@ -36,7 +36,7 @@ docker build --build-arg "host_uid=$(id -u)" --build-arg "host_gid=$(id -g)" \
 
 echo "Running Docker image and starting yocto build..."
 docker run -it --rm \
-    -e BUILD_TOOLS_SCR='$BUILD_TOOLS' \
+    -e BUILD_TOOLS_SCR=$BUILD_TOOLS \
     -v $PWD/sources:/home/antisoup/yocto/src \
     -v $PWD/output:/home/antisoup/yocto/out \
     antisoup-os-image:latest
