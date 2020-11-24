@@ -24,8 +24,8 @@ RUN groupadd -g $host_gid $USER_NAME && \
 USER $USER_NAME
 
 #setup build dirs
-ENV BUILD_SRC_DIR /home/$USER_NAME/src/
-ENV BUILD_OUT_DIR /home/$USER_NAME/out/
+ENV BUILD_SRC_DIR /home/$USER_NAME/yocto/src/
+ENV BUILD_OUT_DIR /home/$USER_NAME/yocto/out/
 RUN mkdir -p $BUILD_SRC_DIR $BUILD_OUT_DIR
 
 #start build
